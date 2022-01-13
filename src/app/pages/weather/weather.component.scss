@@ -1,0 +1,26 @@
+.location-search {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+
+.forecast-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  .forcast-card {
+    height: 300px;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  :first-child {
+    margin-inline-start: 20px;
+  }
+  :last-child {
+    margin-inline-end: 20px;
+  }
+}

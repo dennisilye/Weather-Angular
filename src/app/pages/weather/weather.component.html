@@ -1,0 +1,44 @@
+<main>
+  <form class="location-search">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        name="location"
+        [(ngModel)]="location"
+        matInput
+        placeholder="Ex. Tel-aviv"
+      />
+    </mat-form-field>
+    <button (click)="onSearch($event)" mat-raised-button color="primary">
+      Search
+    </button>
+  </form>
+  <div *ngIf="searchedLocations" ngClass="forecast-list container">
+    <div
+      *ngFor="
+        let forcast of searchedLocations.__zone_symbol__value?.DailyForecasts
+      "
+    >
+      <mat-card ngClass="forcast-card">
+        <img
+          *ngIf="forcast.Day.Icon > 9; else otherImg"
+          src="https://developer.accuweather.com/sites/default/files/{{
+            forcast.Day.Icon
+          }}-s.png"
+        />
+        <ng-template #otherImg>
+          <img
+            src="https://developer.accuweather.com/sites/default/files/0{{
+              forcast.Day.Icon
+            }}-s.png"
+          />
+        </ng-template>
+        <mat-card-title>{{ forcast.Date | date }}</mat-card-title>
+        <mat-card-subtitle>{{ forcast.Day.IconPhrase }}</mat-card-subtitle>
+        <p>Min Temp: {{ forcast.Temperature.Minimum.Value }}</p>
+        <p>Max Temp: {{ forcast.Temperature.Maximum.Value }}</p>
+        <p>Temp in: {{ forcast.Temperature.Maximum.Unit }}</p>
+      </mat-card>
+    </div>
+  </div>
+</main>
