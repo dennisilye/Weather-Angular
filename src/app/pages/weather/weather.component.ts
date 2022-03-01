@@ -15,7 +15,9 @@ export class WeatherComponent implements OnInit {
   onSearch(event: any) {
     event.preventDefault();
     console.log('clikced');
-    this.searchedLocations = this.weatherService.getWeatherAtLocation(this.location);
+    this.weatherService
+      .newCall(this.location)
+      .subscribe((res: any) => (this.searchedLocations = res));
     console.log(this.searchedLocations);
   }
   ngOnInit(): void {}

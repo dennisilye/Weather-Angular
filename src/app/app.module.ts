@@ -12,9 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { WeatherComponent } from './pages/weather/weather.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, WeatherComponent],
+  declarations: [AppComponent, HeaderComponent, WeatherComponent, FavoritesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

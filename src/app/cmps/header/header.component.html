@@ -1,6 +1,10 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
+<mat-toolbar class="header flex space-between" color="primary">
+  <div>
     <span>WeatherApp</span>
-    <!-- <p>{{data | json}}</p> -->
-    <span class="example-spacer"></span> </mat-toolbar-row
-></mat-toolbar>
+    <span class="example-spacer"></span>
+  </div>
+  <nav class="flex ">
+    <a routerLink="/">Home</a>
+    <a routerLink="/favorites">Favorites</a>
+  </nav>
+</mat-toolbar>
